@@ -3,7 +3,7 @@
     public static class ProductConstants
     {
         //Names
-        public const string ProductAName  = "Product A";
+        public const string ProductAName = "Product A";
         public const string ProductBName = "Product B";
         public const string ProductCName = "Product C";
         public const string ProductDName = "Product D";

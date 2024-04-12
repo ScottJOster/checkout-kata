@@ -8,7 +8,7 @@ namespace checkout_kata.Extensions
     {
         public static IServiceCollection AddCheckoutService(this IServiceCollection services)
         {
-            services.AddScoped<ICheckout, Checkout>(); 
+            services.AddScoped<ICheckout, Checkout>();
             return services;
         }
 

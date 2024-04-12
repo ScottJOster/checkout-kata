@@ -41,7 +41,7 @@ namespace UnitTests
             var result = checkout.GetTotalPrice();
             //Assert 
             result.Should().Be(50);
-           
+
         }
 
         [TestMethod]

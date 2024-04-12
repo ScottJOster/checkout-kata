@@ -8,7 +8,7 @@ namespace checkout_kata.Products
         /// Dictionary of products and required fields simulating configurable entities in a DB
         /// in memory db would be better if time was in abundance 
         /// </summary>
-        public IDictionary<string, Product> Products = new Dictionary<string, Product> 
+        public IDictionary<string, Product> Products = new Dictionary<string, Product>
         {
             { ProductConstants.ProductA, new Product{
                 Name = ProductConstants.ProductAName, PriceGbp = ProductConstants.ProductAPrice,

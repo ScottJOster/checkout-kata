@@ -14,17 +14,17 @@ namespace checkout_kata.CheckoutLogic
 
         public decimal GetTotalPrice()
         {
-            var total = Basket.Sum(p=>p.PriceGbp);
+            var total = Basket.Sum(p => p.PriceGbp);
             decimal totalDiscount = 0;
             var distinctproducts = Basket.Distinct();
-            foreach(var product in distinctproducts) 
+            foreach (var product in distinctproducts)
             {
                 totalDiscount += GetTotalApplicableDiscountAmount(product);
             }
             return total - totalDiscount;
         }
 
-        public decimal GetTotalApplicableDiscountAmount( Product product) 
+        public decimal GetTotalApplicableDiscountAmount(Product product)
         {
             if (product.DiscountApplicableQuantity != null)
             {
