@@ -18,10 +18,10 @@
         public const double ProductCPrice = 20;
         public const double ProductDPrice = 15;
         //Quantities where discount is applicable
-        public const int ADsicountQty = 3;
+        public const int ADiscountQty = 3;
         public const int BDiscountQty = 2;
         //Discount amounts
-        public const double ADsicountAmount = 20;
+        public const double ADiscountAmount = 20;
         public const double BDiscountAmount = 15;
 
 

@@ -1,4 +1,6 @@
-﻿namespace checkout_kata.Products
+﻿using checkout_kata.Constants;
+
+namespace checkout_kata.Products
 {
     public class ProductDictionary
     {
@@ -8,11 +10,19 @@
         /// </summary>
         public IDictionary<string, Product> Products = new Dictionary<string, Product> 
         {
-            { "A", new Product{Name = "Product A", PriceGbp = 50, DiscountApplicableQuantity = 3, DiscountAmount = 20} },
-            { "B", new Product{Name = "Product B", PriceGbp = 30, DiscountApplicableQuantity = 2, DiscountAmount = 15} },
-            { "C", new Product{Name = "Product C", PriceGbp = 20} },
-            { "D", new Product{Name = "Product D", PriceGbp = 15} }
-
+            { ProductConstants.ProductA, new Product{
+                Name = ProductConstants.ProductAName, PriceGbp = ProductConstants.ProductAPrice,
+                DiscountApplicableQuantity = ProductConstants.ADiscountQty,
+                DiscountAmount = ProductConstants.ADiscountAmount} },
+            { ProductConstants.ProductB, new Product{
+                Name = ProductConstants.ProductBName, PriceGbp = ProductConstants.ProductBPrice,
+                DiscountApplicableQuantity = ProductConstants.BDiscountQty,
+                DiscountAmount = ProductConstants.BDiscountAmount} },
+            { ProductConstants.ProductC, new Product{
+                Name = ProductConstants.ProductCName, PriceGbp = ProductConstants.ProductCPrice} },
+            { ProductConstants.ProductD, new Product{
+                Name = ProductConstants.ProductDName, PriceGbp = ProductConstants.ProductDPrice,
+               } }
         };
     }
 }
