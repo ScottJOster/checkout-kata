@@ -20,14 +20,20 @@ namespace checkout_kata.CheckoutLogic
             var distinctproducts = Basket.Distinct();
             foreach(var product in distinctproducts) 
             {
-                if (product.DiscountApplicableQuantity != null && product.DiscountAmount != null)
-                {
-                    var totalNumberOfSpecificProduct = Basket.Count(p => p.Name == product.Name);
-                    decimal amountOfDiscountsToApply = (decimal)(totalNumberOfSpecificProduct / product.DiscountApplicableQuantity);
-                    totalDiscount += amountOfDiscountsToApply * product.DiscountAmount;
-                }
+                totalDiscount += GetTotalApplicableDiscountAmount(product);
             }
             return total - totalDiscount;
+        }
+
+        public decimal GetTotalApplicableDiscountAmount( Product product) 
+        {
+            if (product.DiscountApplicableQuantity != null)
+            {
+                var totalNumberOfSpecificProduct = Basket.Count(p => p.Name == product.Name);
+                decimal amountOfDiscountsToApply = (decimal)(totalNumberOfSpecificProduct / product.DiscountApplicableQuantity);
+                return amountOfDiscountsToApply * product.DiscountAmount;
+            }
+            return 0;
         }
     }
 }
