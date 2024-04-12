@@ -5,8 +5,7 @@ Given further time next steps would likely be:
 - Further refactor checkout methods to extract logic into more SRP methods and unit test individually
 - Be more explicit in the behaviour of the division and cases where odd number could be returned for the amount of discounts to apply
 - Add more happy and sad paths tests
-
-- 
+-  Add summaries to all methods including params and returns
 
 
 
