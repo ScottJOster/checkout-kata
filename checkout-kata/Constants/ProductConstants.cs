@@ -13,16 +13,16 @@
         public const string ProductC = "C";
         public const string ProductD = "D";
         //Prices
-        public const double ProductAPrice = 50;
-        public const double ProductBPrice = 30;
-        public const double ProductCPrice = 20;
-        public const double ProductDPrice = 15;
+        public const decimal ProductAPrice = 50;
+        public const decimal ProductBPrice = 30;
+        public const decimal ProductCPrice = 20;
+        public const decimal ProductDPrice = 15;
         //Quantities where discount is applicable
         public const int ADiscountQty = 3;
         public const int BDiscountQty = 2;
         //Discount amounts
-        public const double ADiscountAmount = 20;
-        public const double BDiscountAmount = 15;
+        public const decimal ADiscountAmount = 20;
+        public const decimal BDiscountAmount = 15;
 
 
 

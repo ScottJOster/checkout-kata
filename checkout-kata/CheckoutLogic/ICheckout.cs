@@ -6,7 +6,7 @@ namespace checkout_kata.CheckoutLogic
     {
         List<Product> Basket { get; set; }
 
-        double GetTotalPrice();
+        decimal GetTotalPrice();
         void Scan(Product product);
     }
 }

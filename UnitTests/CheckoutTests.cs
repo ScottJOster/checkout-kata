@@ -78,5 +78,26 @@ namespace UnitTests
             result.Should().Be(expectedTotalPrice);
 
         }
+        [TestMethod]
+        public void GetTotalPrice_WhenNoDiscountQtysAreHit_DoesNotApplyDiscounts()
+        {
+            //Arrange 
+            var expectedTotalPrice = 165;
+            var checkout = new Checkout();
+            var productA = ProductDictionary.Products[ProductConstants.ProductA];
+            var productB = ProductDictionary.Products[ProductConstants.ProductB];
+            var productC = ProductDictionary.Products[ProductConstants.ProductC];
+            var productD = ProductDictionary.Products[ProductConstants.ProductD];
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productB);
+            checkout.Scan(productC);
+            checkout.Scan(productD);
+            //Act 
+            var result = checkout.GetTotalPrice();
+            //Assert 
+            result.Should().Be(expectedTotalPrice);
+
+        }
     }
 }
