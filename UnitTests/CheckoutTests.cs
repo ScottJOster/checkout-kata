@@ -1,11 +1,10 @@
 using checkout_kata.CheckoutLogic;
 using checkout_kata.Products;
 using FluentAssertions;
-using System.Net.Http.Headers;
 
 namespace UnitTests
 {
- 
+
 
 
     [TestClass]
@@ -16,7 +15,7 @@ namespace UnitTests
 
         public void TestInitialize()
         {
-          ProductDictionary = new ProductDictionary();
+            ProductDictionary = new ProductDictionary();
 
         }
         [TestMethod]
@@ -28,7 +27,6 @@ namespace UnitTests
             //Act 
             checkout.Scan(productA);
             //Assert 
-
             checkout.Basket.Should().NotBeEmpty();
             checkout.Basket.Count.Should().Be(1);
             checkout.Basket[0].Name.Should().Be("Product A");
