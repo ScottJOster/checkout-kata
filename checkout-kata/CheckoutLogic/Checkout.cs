@@ -1,5 +1,4 @@
 ﻿using checkout_kata.Products;
-using System.Linq;
 
 namespace checkout_kata.CheckoutLogic
 {
