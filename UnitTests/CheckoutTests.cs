@@ -1,4 +1,6 @@
+using checkout_kata.CheckoutLogic;
 using checkout_kata.Products;
+using FluentAssertions;
 using System.Net.Http.Headers;
 
 namespace UnitTests
@@ -18,11 +20,18 @@ namespace UnitTests
 
         }
         [TestMethod]
-        public void TestMethod1()
+        public void Add_WhenCalledWithValidProduct_AddsProductToBasket()
         {
+            //Arrange 
             var productA = ProductDictionary.Products["A"];
-            Assert.IsNotNull(productA);
-            Assert.AreEqual("Product A", productA.Name);
+            var checkout = new Checkout();
+            //Act 
+            checkout.Scan(productA);
+            //Assert 
+
+            checkout.Basket.Should().NotBeEmpty();
+            checkout.Basket.Count.Should().Be(1);
+            checkout.Basket[0].Name.Should().Be("Product A");
         }
     }
 }
