@@ -43,5 +43,19 @@ namespace UnitTests
             result.Should().Be(50);
            
         }
+
+        [TestMethod]
+        public void GetTotalPrice_WhenBasketIsEmptyShouldReturnXero()
+        {
+            //Arrange 
+            var productA = ProductDictionary.Products[ProductConstants.ProductA];
+            var checkout = new Checkout();
+        
+            //Act 
+            var result = checkout.GetTotalPrice();
+            //Assert 
+            result.Should().Be(0);
+
+        }
     }
 }
