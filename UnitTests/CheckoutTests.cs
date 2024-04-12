@@ -45,12 +45,10 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void GetTotalPrice_WhenBasketIsEmptyShouldReturnXero()
+        public void GetTotalPrice_WhenBasketIsEmptyShouldReturnZero()
         {
             //Arrange 
-            var productA = ProductDictionary.Products[ProductConstants.ProductA];
             var checkout = new Checkout();
-        
             //Act 
             var result = checkout.GetTotalPrice();
             //Assert 
