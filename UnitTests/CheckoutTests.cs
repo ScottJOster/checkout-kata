@@ -40,9 +40,8 @@ namespace UnitTests
             //Act 
             var result = checkout.GetTotalPrice();
             //Assert 
-            checkout.Basket.Should().NotBeEmpty();
-            checkout.Basket.Count.Should().Be(1);
-            checkout.Basket[0].Name.Should().Be(ProductConstants.ProductAName);
+            result.Should().Be(50);
+           
         }
     }
 }

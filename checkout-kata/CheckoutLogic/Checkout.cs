@@ -1,4 +1,5 @@
 ﻿using checkout_kata.Products;
+using System.Linq;
 
 namespace checkout_kata.CheckoutLogic
 {
@@ -14,7 +15,7 @@ namespace checkout_kata.CheckoutLogic
 
         public double GetTotalPrice()
         {
-            return 1;
+            return Basket.Sum(p=>p.PriceGbp);
         }
     }
 }
