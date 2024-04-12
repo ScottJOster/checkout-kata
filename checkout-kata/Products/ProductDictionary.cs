@@ -6,7 +6,7 @@ namespace checkout_kata.Products
     {
         /// <summary>
         /// Dictionary of products and required fields simulating configurable entities in a DB
-        /// in memory db would be better if time was in abudnace 
+        /// in memory db would be better if time was in abundnace 
         /// </summary>
         public IDictionary<string, Product> Products = new Dictionary<string, Product> 
         {
