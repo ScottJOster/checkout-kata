@@ -4,6 +4,7 @@
     {
         /// <summary>
         /// Dictionary of products and required fields simulating configurable entities in a DB
+        /// in memory db would be better if time was in abudnace 
         /// </summary>
         public IDictionary<string, Product> Products = new Dictionary<string, Product> 
         {
