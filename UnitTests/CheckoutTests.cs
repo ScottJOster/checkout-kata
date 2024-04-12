@@ -99,5 +99,48 @@ namespace UnitTests
             result.Should().Be(expectedTotalPrice);
 
         }
+
+        [TestMethod]
+        public void GetTotalPrice_WhenTotalApplicableDiscountsAreNotWholeNumber_ShouldOnlyApplyNumberOfWholeDiscountsAchieved()
+        {
+            //Arrange 
+            var expectedTotalPrice = 180;
+            var checkout = new Checkout();
+            var productA = ProductDictionary.Products[ProductConstants.ProductA];
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            //Act 
+            var result = checkout.GetTotalPrice();
+            //Assert 
+            result.Should().Be(expectedTotalPrice);
+
+        }
+
+        [TestMethod]
+        public void GetTotalPrice_CanApplyMultipleDiscountstoMultipleProducts()
+        {
+            //Arrange 
+            var expectedTotalPrice = 405;
+            var checkout = new Checkout();
+            var productA = ProductDictionary.Products[ProductConstants.ProductA];
+            var productB = ProductDictionary.Products[ProductConstants.ProductB];
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productA);
+            checkout.Scan(productB);
+            checkout.Scan(productB);
+            //Act 
+            var result = checkout.GetTotalPrice();
+            //Assert 
+            result.Should().Be(expectedTotalPrice);
+
+        }
     }
 }
